@@ -610,8 +610,8 @@ public class TriangleGrid : MonoBehaviour
 
 			foreach (var shape in _validShapes)
 			{
-				//AddShape(shape.Nodes.Select(x => x.transform.position).ToArray(), shape.Nodes[0].Color, (ShapeKind)shape.Nodes.Count, true, true);
-				AddShape(shape.Nodes.Select(x => x.transform.position).ToArray(), shape.Nodes[0].Color, (ShapeKind)shape.Nodes.Count, true, false);
+				AddShape(shape.Nodes.Select(x => x.transform.position).ToArray(), shape.Nodes[0].Color, (ShapeKind)shape.Nodes.Count, true, true);
+				//AddShape(shape.Nodes.Select(x => x.transform.position).ToArray(), shape.Nodes[0].Color, (ShapeKind)shape.Nodes.Count, true, false);
 			}
 
 #endif
@@ -806,8 +806,8 @@ public class TriangleGrid : MonoBehaviour
 		var mesh = _shapeGenerator.GenerateShape(simplifiedShape);
 
 		newShape.transform.SetParent(transform, true);
-		//newShape.Initialize(this, mesh, color, shapeKind, /*size, */Shapes.Count, fromSave, debug);
-		newShape.Initialize(this, mesh, color, shapeKind, /*size, */Shapes.Count, fromSave, false);
+		newShape.Initialize(this, mesh, color, shapeKind, /*size, */Shapes.Count, fromSave, debug);
+		//newShape.Initialize(this, mesh, color, shapeKind, /*size, */Shapes.Count, fromSave, false);
 
 		if (!debug)
 		{
@@ -1014,10 +1014,10 @@ public class TriangleGrid : MonoBehaviour
 				foreach (var shapeKind in _shapeKinds)
 				{
 					// TEMP !!!
-					if(shapeKind != ShapeKind.Triangle)
+					/*if(shapeKind != ShapeKind.Triangle)
 					{
 						continue;
-					}
+					}*/
 					//
 
 					if (cancellationToken.IsCancellationRequested)
